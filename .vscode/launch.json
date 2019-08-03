@@ -15,13 +15,13 @@
             "type": "node",
             "request": "launch",
             "name": "JavaScriptDebug",
-            "program": "${workspaceFolder}/scripts/jsdemo/run.js"
+            "program": "${workspaceFolder}/src/scripts/jsdemo/run.js"
         },
         {
             "type": "node",
             "request": "launch",
             "name": "NodeModuleJavaScriptDebug",
-            "program": "${workspaceFolder}/scripts/jsdemo/run.mjs"
+            "program": "${workspaceFolder}/src/scripts/jsdemo/run.mjs"
         }
     ]
 }
