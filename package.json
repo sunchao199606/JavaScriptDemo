@@ -1,0 +1,27 @@
+{
+  "name": "javascriptdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunchao199606/JavaScriptDemo.git"
+  },
+  "author": "sunchao199606",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunchao199606/JavaScriptDemo/issues"
+  },
+  "homepage": "https://github.com/sunchao199606/JavaScriptDemo#readme"
+}
