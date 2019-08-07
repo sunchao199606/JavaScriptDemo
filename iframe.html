@@ -1,0 +1,349 @@
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>aftpraser</title>
+    <style>
+        .Rect {}
+
+        .Digit {}
+
+        body {
+            letter-spacing: normal;
+        }
+
+        table {
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        td {
+            word-wrap: break-word;
+            padding: 0;
+        }
+
+        .Bold {
+            font-weight: bold;
+        }
+
+        .Underline {
+            text-decoration: underline;
+        }
+
+        .Doubleheight {
+            display: inline-block;
+            /*让span变块状，只有块状元素可以缩放*/
+            transform: scale(1, 2);
+            /*缩放属性；两个参数：(水平缩放比例,垂直缩放比例)；1表示原比例*/
+            /*私有缩放属性，为了兼容各浏览器；注：不兼容IE8以下浏览器*/
+            -ms-transform: scale(1, 2);
+            -webkit-transform: scale(1, 2);
+            -moz-transform: scale(1, 2);
+            -o-transform: scale(1, 2);
+        }
+
+        .Doublewidth {
+            display: inline-block;
+            /*让span变块状，只有块状元素可以缩放*/
+            transform: scale(2, 1);
+            /*缩放属性；两个参数：(水平缩放比例,垂直缩放比例)；1表示原比例*/
+            /*私有缩放属性，为了兼容各浏览器；注：不兼容IE8以下浏览器*/
+            -ms-transform: scale(2, 1);
+            -webkit-transform: scale(2, 1);
+            -moz-transform: scale(2, 1);
+            -o-transform: scale(2, 1);
+        }
+
+        .Tripleheight {}
+
+        .Triplewidth {}
+    </style>
+</head>
+
+<body style="font-size: 12.0143px; font-family: 宋体;">
+    <div class="Root" caption="">
+        <div class="Setting" hidden="" style="display: none; visibility: hidden;">
+            <div class="Page" name="A4(210*297)">
+                <div class="ColInterval" hidden="" style="display: none; visibility: hidden;">
+                    1.84
+                </div>
+                <div class="LineInterval" hidden="" style="display: none; visibility: hidden;">
+                    5.14
+                </div>
+                <div class="PrintBackgroundImage" hidden="" style="display: none; visibility: hidden;">
+                    D:\repo\master\ab\AB_Client\CEF\cn.com.agree.ab.a4.client.gui.adore\ROOT\workspace\Demo\resources\image\18051.jpg
+                </div>
+                <div class="CodeTitleFile">
+                    DG_convert.dat
+                </div>
+            </div>
+        </div>
+        <div class="DataBasket" hidden="" style="display: none; visibility: hidden;">
+            <div class="Ade" name="-11111"></div>
+        </div>
+        <div class="InArgs" hidden="" style="display: none; visibility: hidden;"></div>
+        <div class="Content">
+            <div class="Image" deltaheight="-1.00" height="31.54" ide_id="image1" isprint="true" left="48.05" mode="1"
+                pos="Absolute" src="77777" top="30.27" vzoom="1.0" width="36.41"
+                style="position: absolute; word-wrap: break-word; top: 101.9559px; height: 99.9818px; left: 159.3185px; width: 115.4197px;">
+                图片
+                <img src="77777" width="115.4197px" height="99.9818px" />
+            </div>
+            <div class="Rect" addheightofline="0.0" bold="false" boundtableidofaft="" ccyflag="" codetitle="" comment=""
+                defaultvalue="" deltaheight="-1.00" doubleheight="false" doublewidth="false" height="5.08"
+                horizontalcompress="false" ide_id="variable1" isfixedtop="false" isparsecrlf="false"
+                isparsestatisticalinfo="false" isprint="true" left="85.09" length="0" lineseparate="5.14" pos="Absolute"
+                textalign="Align_Left" top="73.66" tripleheight="false" triplewidth="false" type="E"
+                verticalalign="Align_Middle" width="29.84" ade="" border-bottom="0" border-left="0" border-right="0"
+                border-top="0"
+                style="position: absolute; word-wrap: break-word; top: 239.5022px; height: 16.1036px; left: 276.7353px; width: 94.5928px; text-align: left; vertical-align: middle;">
+                负壹仟壹佰壹拾壹元贰角叁分
+            </div>
+            <div class="QRCode" deltaheight="-1.00" ide_id="qrcode1" isprint="true" left="7.41" pos="Absolute" size="3"
+                top="81.07" vzoom="1.0"
+                style="position: absolute; word-wrap: break-word; top: 262.9919px; height: 0px; left: 30.4897px; width: 0px;">
+                77777
+            </div>
+        </div>
+    </div>
+    <script>var printflag = false;</script>
+    <script src="D:\\Program\\workspace\\VsCode\\JavaScriptDemo\\lib\\qrcode.min.js"></script>
+    <script>
+
+        /*设置缩放*/
+        /*TODO 最后转成输入显示器dpi和偏移量（字符个数？像素数？）*/
+        var zoom = 3.17;
+        /* 72dpi下，一毫米约3.17个像素 */
+        var marginl = 7;
+        /* 偏移量 */
+        var margint = 6;
+        /* 解决IE8之类不支持getElementsByClassName */
+        if (!document.getElementsByClassName) {
+            document.getElementsByClassName = function (className, element) {
+                var children = (element || document).getElementsByTagName('*');
+                var elements = new Array();
+                for (var i = 0; i < children.length; i++) {
+                    var child = children[i];
+                    var classNames = child.className.split(' ');
+                    for (var j = 0; j < classNames.length; j++) {
+                        if (classNames[j] == className) {
+                            elements.push(child);
+                            break;
+                        }
+                    }
+                }
+                return elements;
+            };
+        }
+        setfontsize();
+        sethidden();
+        settitle();
+        prasetag();
+        setbg();
+        /* 设置默认字符大小 */
+        /* TODO 数值需要验证 */
+        function setfontsize() {
+            document.body.style.fontSize = 3.79 * zoom + 'px';
+            document.body.style.fontFamily = "宋体";
+        }
+        /* 隐藏配置 */
+        function sethidden() {
+            var hiddenclass = ['Setting', 'DataBasket', 'InArgs', 'ColInterval', 'LineInterval', 'PrintBackgroundImage'];
+            for (var j = 0; j < hiddenclass.length; j++) {
+                var hid = document.getElementsByClassName(hiddenclass[j]);
+                for (var i = 0; i < hid.length; i++) {
+                    hid[i].hidden = true;
+                    hid[i].style.display = 'none';
+                    hid[i].style.visibility = 'hidden';
+                }
+            }
+        }
+        /* 设置标题 */
+        function settitle() {
+            var titlestr = document.getElementsByTagName('Root');
+            if (titlestr.length == 1) {
+                document.title = titlestr[0].getAttribute('caption');
+            }
+        }
+        /* 调整标签顺序 */
+        /* 倍高倍宽应该在其他特效外 */
+        /* rect,digit,table */
+        function prasetag() {
+            var classname = ['Rect', 'Digit', 'Image', 'Line', 'QRCode'];
+            var tags = ['Table', 'Tr', 'Td'];
+            var divs;
+            for (var j = 0; j < (tags.length + classname.length); j++) {
+                if (j < tags.length) {
+                    divs = document.getElementsByTagName(tags[j]);
+                } else {
+                    divs = document.getElementsByClassName(classname[j - tags.length])
+                }
+                for (var i = 0; i < divs.length; i++) {
+                    div = divs[i];
+                    if (div !== null || div !== undefined || div !== '' || div !== "") {
+                        if (tags[j] !== 'Tr') {
+                            if (tags[j] !== 'Td') {
+                                div.style.position = 'absolute';
+                            }
+                        }
+                        if (tags[j] == 'Td') {
+                            attrh = div.getAttribute('border-right');
+                            if (attrh == 0) {
+                                div.style.borderRight = '0px';
+                            }
+                            attrh = div.getAttribute('border-left');
+                            if (attrh == 0) {
+                                div.style.borderLeft = '0px';
+                            }
+                            attrh = div.getAttribute('border-bottom');
+                            if (attrh == 0) {
+                                div.style.borderBottom = '0px';
+                            }
+                            attrh = div.getAttribute('border-top');
+                            if (attrh == 0) {
+                                div.style.borderTop = '0px';
+                            }
+                        }
+                        if (tags[j] == 'Digit') {
+                            /* TODO 处理大小写 */
+                        }
+                        div.style.wordWrap = 'break-word';
+                        attrt = div.getAttribute('Top');
+                        if (attrt !== null || attrt !== undefined || attrt !== '' || attrt !== "") {
+                            div.style.top = attrt * zoom + margint + 'px';
+                        }
+                        attrh = div.getAttribute('Height');
+                        if (attrh !== null || attrh !== undefined || attrh !== '' || attrh !== "") {
+                            div.style.height = attrh * zoom + 'px';
+                        }
+                        attrl = div.getAttribute('Left');
+                        if (attrl !== null || attrl !== undefined || attrl !== '' || attrl !== "") {
+                            div.style.left = attrl * zoom + marginl + 'px';
+                        }
+                        attrw = div.getAttribute('Width');
+                        if (attrw !== null || attrw !== undefined || attrw !== '' || attrw !== "") {
+                            div.style.width = attrw * zoom + 'px';
+                        }
+                        if (div.getAttribute('TextAlign') == 'Align_Center') {
+                            div.style.textAlign = 'center';
+                        } else if (div.getAttribute('TextAlign') == 'Align_Left') {
+                            div.style.textAlign = 'left';
+                        } else if (div.getAttribute('TextAlign') == 'Align_Right') {
+                            div.style.textAlign = 'right';
+                        }
+                        if (div.getAttribute('VerticalAlign') == 'Align_Middle') {
+                            div.style.verticalAlign = 'middle';
+                        } else if (div.getAttribute('VerticalAlign') == 'Align_Top') {
+                            div.style.verticalAlign = 'top';
+                        } else if (div.getAttribute('VerticalAlign') == 'Align_Bottom') {
+                            div.style.verticalAlign = 'bottom';
+                        }
+                        if (classname[j - tags.length] === 'Line') {
+                            var attrIsHorizontal = div.getAttribute('isHorizontal');
+                            var attrLineLength = div.getAttribute('lineLength');
+                            var attrIsBold = div.getAttribute('isBold');
+                            if (attrIsHorizontal && attrIsHorizontal === 'false') {
+                                div.style.width = '0';
+                                div.style.height = attrLineLength * zoom + 'px';
+                                if (attrIsBold && attrIsBold === 'true') {
+                                    div.style.borderLeft = '2px solid black';
+                                } else {
+                                    div.style.borderLeft = '1px solid black';
+                                }
+                            } else {
+                                div.style.height = '0';
+                                div.style.width = attrLineLength * zoom + 'px';
+                                if (attrIsBold && attrIsBold === 'true') {
+                                    div.style.borderTop = '2px solid black';
+                                } else {
+                                    div.style.borderTop = '1px solid black';
+                                }
+                            }
+                        } else if (classname[j - tags.length] === 'Image') {
+                            var url = div.getAttribute('Src');
+                            var img = document.createElement('img');
+                            img.setAttribute("src", url);
+                            img.setAttribute("width", div.style.width);
+                            img.setAttribute("height", div.style.height);
+                            div.appendChild(img);
+                        } else if (classname[j - tags.length] === 'QRCode') {
+                            var content = div.innerHTML;
+                            div.innerHTML = "";
+                            var size = div.getAttribute('size') * 10 * zoom;
+                            new QRCode(div, {
+                                text: content,
+                                width: size,
+                                height: size
+                            });
+                        }
+                    }
+                }
+            }
+        }
+        /* 设置背景 */
+        function setbg() {
+            var backgroundimg = document.getElementsByClassName('PrintBackgroundImage');
+            if (backgroundimg.length != 0) {
+                for (var i = 0; i < backgroundimg.length; i++) {
+                    var pagesize = document.getElementsByClassName('Page');
+                    if (pagesize.length != 0) {
+                        attrs = backgroundimg[i].innerText;
+                        if (attrs !== null && attrs !== undefined && attrs !== '' && attrs !== "") {
+                            var image = document.createElement('img');
+                            image.src = attrs;
+                            document.body.appendChild(image);
+                            image.style.top = '0px';
+                            image.style.left = '0px';
+                            var name = pagesize[i].getAttribute('name');
+                            var size = name.match(new RegExp('\\([0-9]+\\*[0-9]+\\)'));
+                            var x;
+                            if (size !== null && size !== undefined && size !== '' && size !== "" && size.length == 1) {
+                                x = size[0].match(/\d+/g);
+                            } else {
+                                x = [0, 0];
+                            }
+                            image.style.height = x[1] * zoom + 'px';
+                            image.style.width = x[0] * zoom + 'px';
+                        }
+                    } else {
+                        alert('Page元素错误');
+                    }
+                }
+            } else {
+                alert('PrintBackgroundImage元素错误')
+            }
+        }
+        /* 由于表格数据过长时支持自动换行 导致table高度改变 表格下面的各元素由于绝对布局会出现错乱 */
+        window.onload = function () {
+            /* 是否含有表格 并且只考虑含有一个表格的情况*/
+            var tables = document.getElementsByTagName('table');
+            if (!tables || tables.length === 0 || tables.length > 1) {
+                return;
+            }
+            /* 获取加载后的实际表格高度*/
+            var table = tables[0];
+            var actualTableHeight = parseFloat(table.offsetHeight);
+            var expectTableHeight = parseFloat(table.getAttribute('height') * zoom);
+            /* 表格有没有自动换行导致增加高度。允许10px以内的误差,也就是3mm左右*/
+            if (actualTableHeight < expectTableHeight + 10) {
+                return;
+            }
+            var tableBorderPx = table.offsetTop + actualTableHeight;
+            var content = document.getElementsByClassName('Content')[0];
+            if (content) {
+                var tableIndex = [].indexOf.call(content.children, table);
+                var tableBorderMM = parseFloat(table.getAttribute('top')) + parseFloat(table.getAttribute('height'));
+                for (i = tableIndex + 1; i < content.children.length; i++) {
+                    var ele = content.children[i];
+                    var eleTopMM = ele.getAttribute('top');
+                    var deltaPx = (parseFloat(eleTopMM) - tableBorderMM) * zoom + margint;
+                    var changeTop = tableBorderPx + deltaPx + "px";
+                    ele.style.top = changeTop;
+                }
+            }
+        } 
+    </script>
+</body>
+
+</html>
