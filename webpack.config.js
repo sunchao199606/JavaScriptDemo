@@ -4,7 +4,8 @@ const webpack = require("webpack");
 
 module.exports = {
     entry: {
-        main: "./src/scripts/main.js"
+        main: "./src/scripts/main.js",
+        draggable: "./src/scripts/draggable.js"
     },
     output: {
         //publicPath: __dirname + "/dist/",
