@@ -5,10 +5,12 @@
 
 // require('./base/proto');
 
-require('./base/this');
+// require('./base/this');
 // require('./es6/function');
 
 // require('./node/reader');
 
 // require('./node/path');
 // require('./base/mythis');
+
+require('./es6/async');
