@@ -13,4 +13,6 @@
 // require('./node/path');
 // require('./base/mythis');
 
-require('./es6/async');
+// require('./es6/async');
+// require('./base/object');
+require('./base/sleep')
