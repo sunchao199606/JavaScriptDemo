@@ -1,5 +1,5 @@
 // 主线程所有的函数执行完毕才会从任务队列中拿出任务来执行 任务即回调函数
-function sleep(interval) {
+function stopMianThread(interval) {
     let date = new Date();
     let endInstant = date.getTime() + interval;
     while (new Date().getTime() < endInstant) {
@@ -24,6 +24,6 @@ setTimeout(() => {
     console.log('6000ms callback')
 }, 6000);
 
-sleep(3000);
+stopMianThread(3000);
 
 console.log('end')
