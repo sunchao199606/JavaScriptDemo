@@ -15,4 +15,5 @@
 
 // require('./es6/async');
 // require('./base/object');
-require('./base/sleep')
+// require('./base/sleep')
+require('./demo/websocket')
