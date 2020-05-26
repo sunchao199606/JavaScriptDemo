@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS position属性</title>
+    <script src="../lib/jquery.js"></script>
+    <style>
+        .outter {
+            position: relative;
+            left: 100px;
+            background-color: aqua;
+            width: 100%;
+            height: 300px;
+            margin-left: 50px;
+        }
+
+        .absolute {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            left: 50px;
+            background-color: chartreuse;
+        }
+
+        .span1 {
+            position: fixed;
+            left: 500px;
+            background-color: chartreuse;
+            z-index: 10;
+        }
+
+        .span2 {
+            left: 500px;
+            background-color: chartreuse;
+            z-index: 1;
+        }
+
+        .inner {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            left: 100px;
+            background-color: brown;
+        }
+
+        li {
+            margin: 10px;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outter">
+        <div class="inner"></div>
+        <span class="span1">span</span>
+        <span class="span2">AAAAA</span>
+        <div class="absolute">absolute</div>
+    </div>
+    <div>
+        <ul>
+            <li>默认 :在pisition属性不设置，即默认的情况下忽略top, bottom, left, right或者z-index </li>
+            <li>fixed :生成绝对定位的元素，不随滚动条滚动而改变位置，相对于浏览器窗口(屏幕)进行定位,元素的位置通过 "left", "top", "right" 以及 "bottom"属性进行规定</li>
+            <li>absolute :生成绝对定位的元素，相对于非默认定位的第一个父元素进行定位</li>
+            <li>relative :生成相对定位的元素，相对于其默认正常位置进行定位。因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
