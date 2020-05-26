@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验印拖动组件</title>
+    <script src="../lib/jquery.js"></script>
+    <style type="text/css">
+        .adore-seal-bg {
+            margin: auto;
+            width: 600px;
+            height: 400px;
+            background: url('C:\\Users\\89754\\Pictures\\Saved Pictures\\soccer_goal-1920x1080.jpg') no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+
+        .adore-seal {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="background" class="adore-seal-bg">
+            <img class="adore-seal" src="../src/images/seal.png">
+        </div>
+        <div>
+            <button>确定</button>
+            <button>取消</button>
+        </div>
+    </div>
+    <script>
+        // seal是装图片的容器,backgroundther是图片移动缩放的范围,scale是控制缩放的小图标
+        let seal = $(".adore-seal");
+        let background = $('.adore-seal-bg');
+        let scale = document.getElementById("scale");
+        // 图片移动效果
+        let n = 0;
+        seal.on("mousedown", (e) => {
+            event.preventDefault();
+            let posX = e.clientX - seal.offset().left;
+            let posY = e.clientY - seal.offset().top;
+            let maxLeft = background.width() - seal.width();
+            let maxTop = background.height() - seal.height();
+            console.log("maxLeft:" + maxLeft + " maxTop:" + maxTop);
+            background.on("mousemove", (e) => {
+                event.preventDefault();
+                let left = e.clientX - posX - background.offset().left;
+                let top = e.clientY - posY - background.offset().top;
+                // 图形移动的边界判断
+                left = left <= 0 ? 0 : left;
+                top = top <= 0 ? 0 : top;
+                left = left >= maxLeft ? maxLeft : left;
+                top = top >= maxTop ? maxTop : top;
+                console.log(++n + " x:" + left + " y:" + top)
+                seal.css("left", left + 'px');
+                seal.css("top", top + 'px');
+            });
+            seal.on("mouseleave", () => {
+                background.off("mousemove", null);
+            });
+            seal.on()
+            seal.on("mouseup", () => {
+                background.off("mousemove", null);
+            });
+        });
+    </script>
+</body>
+
+</html>
