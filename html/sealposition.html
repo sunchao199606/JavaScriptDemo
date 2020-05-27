@@ -11,8 +11,8 @@
             margin: auto;
             width: 600px;
             height: 400px;
-            background: url('C:\\Users\\89754\\Pictures\\Saved Pictures\\soccer_goal-1920x1080.jpg') no-repeat;
             background-size: 100% 100%;
+            background: url('D:/bg.jpg');
             position: relative;
         }
 
@@ -25,12 +25,12 @@
 </head>
 
 <body>
-    <div>
+    <div id="app">
         <div id="background" class="adore-seal-bg">
             <img class="adore-seal" src="../src/images/seal.png">
         </div>
         <div>
-            <button>确定</button>
+            <button id="setbg">设置背景图片</button>
             <button>取消</button>
         </div>
     </div>
@@ -61,11 +61,8 @@
                 seal.css("left", left + 'px');
                 seal.css("top", top + 'px');
             });
-            seal.on("mouseleave", () => {
-                background.off("mousemove", null);
-            });
             seal.on()
-            seal.on("mouseup", () => {
+            $(document).on("mouseup", () => {
                 background.off("mousemove", null);
             });
         });
