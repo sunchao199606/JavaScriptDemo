@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定表格第一行</title>
+    <script src="../../lib/jquery.js"></script>
+    <style>
+        .fixed {
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div
+        style="width: 300px;height: 200px;background-color: chartreuse;margin: auto;overflow: scroll;position: relative;">
+        <table>
+            <tbody></tbody>
+        </table>
+        <span>AAAAAA</span>
+    </div>
+    <script>
+        // 表格赋值
+        let tbody = $("tbody");
+        let value = "data";
+        for (let i = 0; i < 4; i++) {
+            let row = $("<tr></tr>");
+            for (let j = 0; j < 20; j++) {
+                let cell = $("<td>" + value + "</td>");
+                row.append(cell);
+            }
+            tbody.append(row);
+        }
+        $("div").scroll(() => {
+            let left = $("div").scrollLeft();
+            $("div").
+                $(".aa").css({ "position": "relative", "left": left })
+        })
+    </script>
+</body>
+
+</html>
