@@ -6,26 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .app {
-            height: 300px;
-            width: 300px;
+        div {
+            height: 100px;
+            width: 200px;
             background-color: aqua;
-            margin: auto;
         }
 
-        .block {
+        span {
             display: block;
+            width: 300px;
+            height: 100px;
+        }
+
+        input {
+            width: 200px;
+            height: 100px;
         }
     </style>
 </head>
 
 <body>
-    <div class="app">
-        <span>AAA</span><span class="block">BBB</span><span>CCCC</span>
-        <p>段落1</p>
-        <p style="display:inline-block;">段落2</p>
-        <p style="display:inline-block;">段落3</p>
-    </div>
+    <div>这是一个块级元素</div>
+    <span>这是一个行内元素</span><span>这是一个行内元素</span>
+    <input type="text" value="这是一个行内块元素"><input type="text" value="这是一个行内块元素">
+
+    <ul>
+        <li>块级元素占据整个宽度，可设置宽高</li>
+        <li>行内元素宽高为content的宽高，相邻元素在一行内显示，不可设置宽高</li>
+        <li>行内块元素兼具行内元素和块元素的特点，既可设置宽高，又在一行内显示</li>
+        <li>display属性可以设置元素的显示效果，通过inline，block，inline-block属性进行转化</li>
+    </ul>
 </body>
 
 </html>
