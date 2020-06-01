@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css组合选择器</title>
+    <style>
+        /* 后代选择器 选择所有的后代包括儿子孙子....*/
+        div p {
+            font-size: 50px;
+        }
+
+        .app div p {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        /* 子选择器 选择儿子*/
+        p>a {
+            color: red;
+        }
+
+        /* 并集选择器 */
+        span,
+        h3 {
+            color: blueviolet;
+        }
+
+        a:hover {
+            color: chartreuse;
+        }
+
+        a:visited {
+            color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div>
+            <p>wegigabyte<a>link</a></p>
+        </div>
+    </div>
+    <span>span</span>
+    <h3>h3333</h3>
+    <a href="#">
+        aaaaaa
+    </a>
+</body>
+
+</html>
