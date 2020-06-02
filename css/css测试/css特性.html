@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css特性</title>
+    <style>
+        div {
+            text-align: center;
+            color: green;
+        }
+
+        body {
+            font: 30px/1.5 sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>CSS层叠性，就近原则</li>
+        <li>CSS继承性，子元素可以继承父元素文字相关的属性，以及body里面的文字大小及line-height属性</li>
+        <li>CSS优先级，!important>内联样式>id>类选择器>元素选择器>通配符选择器或继承</li>
+    </ul>
+    <div>
+        <p>段落内文字</p>
+        <div>
+            <p>段落二内文字</p>
+        </div>
+    </div>
+    <a href="#">链接</a>
+</body>
+
+</html>
