@@ -1,5 +1,52 @@
 html,
 body {
-    padding: 0px;
-    margin : 0px;
+    padding  : 0px;
+    margin   : 0px;
+    font-size: 12px;
+    font-family: "PingFang SC",
+        Arial,
+        "Microsoft YaHei",
+        sans-serif
+}
+
+.header-color {
+    color: #222;
+}
+
+.header {
+    font-size  : 13px;
+    height     : 75px;
+    line-height: 75px;
+}
+
+.header a {
+    text-decoration: none;
+    color          : #222;
+}
+
+.header a:hover {
+    color: #4E6EF2;
+}
+
+.header .left {
+    float      : left;
+    margin-left: 24px;
+}
+
+.header .left * {
+    margin-right: 32px;
+}
+
+.header .right {
+    float       : right;
+    margin-right: 24px;
+}
+
+.header .right * {
+    margin-left: 32px;
+}
+
+.body {
+    text-align: center;
+    position  : relative;
 }
