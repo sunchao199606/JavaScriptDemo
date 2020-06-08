@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body onload="draw()">
+    <canvas id="canvas"></canvas>
+    <script>
+        function draw() {
+            var canvas = document.getElementById('canvas');
+            canvas.setAttribute("width", "200px");
+            canvas.setAttribute("height", "200px");
+            var ctx = canvas.getContext('2d');
+            ctx.textBaseline = "top";
+            ctx.font = "20px microsoft yahei";
+            ctx.fillStyle = "rgba(184, 184, 184, 0.6)";
+            ctx.rotate(Math.PI / 180 * 30);
+            ctx.fillText("请勿外传", 90, 30);
+        }
+    </script>
+</body>
+
+</html>
