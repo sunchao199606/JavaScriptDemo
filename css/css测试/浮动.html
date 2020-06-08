@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动测试</title>
+    <style>
+        .inner {
+            width: 200px;
+            height: 150px;
+            float: left;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .middle {
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+
+        .left {
+            margin-left: 50px;
+        }
+
+        .right {
+            margin-right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>为什么需要浮动:实现块级元素的单行横向布局</li>
+            <li>浮动的排列特性:脱离标准流，行内块元素特性，</li>
+            <li>3种最常见的布局方式</li>
+            <li>为什么需要清除浮动</li>
+            <li>写出至少两种清除浮动的方法</li>
+            <li>利用ps实现基本的切图</li>
+            <li>利用ps插件实现切图</li>
+            <li>完成学成在线的页面布局</li>
+        </ul>
+    </div>
+    <div style="width: 500px;height:150px;margin: auto;">
+        <div style="width: 200px;height: 150px; background-color:  yellow; float: left;">div3</div>
+        <div style="width: 200px;height: 150px; background-color: green;float: right;">div4</div>
+    </div>
+    <div style="width: 500px;height: 150px; background-color: red;">div1</div>
+    <div style="width: 400px;height: 150px; background-color: orange; display: inline-block;">div2</div>
+    <div style="width: 300px;height: 150px; background-color:  yellow; float: left;">div3</div>
+    <div style="width: 200px;height: 150px; background-color: green;">div4</div>
+    <div style="width: 1050px;height: 250px;margin: auto;">
+        <div class="inner middle left" style="background-color: red;">div1</div>
+        <div class="inner middle" style="background-color: orange;">div2</div>
+        <div class="inner middle" style="background-color:  yellow; ">div3</div>
+        <div class="inner middle right" style="background-color: green;">div4</div>
+    </div>
+</body>
+
+</html>
