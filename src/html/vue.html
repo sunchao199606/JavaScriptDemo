@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Vue</title>
+    <script src="../../lib/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">{{message}}{{show}}
+        <!-- <div v-show="show">
+            我显示了{{item.text}}
+        </div> -->
+        <div style="display: block;" v-once>{{message}}
+            <div>{{show}}</div>
+        </div>
+        <todo-item :content="item"></todo-item>
+    </div>
+    <script>
+        Vue.component('todo-item', {
+            props: ['content'],
+            template: '<p>{{content.text}}</p>'
+        });
+        var app = new Vue({
+            el: '#app',
+            // 有模板就编译模板，并挂载到上面，没模板就挂载到el指向的dom上面
+            // template: '<p>{{message}}</p>',
+            data: function () {
+                return {
+                    message: "Hello Vue",
+                    show: true,
+                    item: {
+                        text: "子组件文本"
+                    }
+                }
+            },
+            // beforeCreate() {
+            //     console.log(app)
+            //     console.log("vue instance is not created, this is " + this.message)
+            // },
+            created() {
+                console.log("vue instance is created")
+            },
+            // beforeMount: () => console.log(this),
+            mounted() {
+                console.log("vue instance is mounted on " + this.$el)
+            },
+        });
+        console.log("new Vue()")
+        app.$mount(document.getElementById('app'))
+    </script>
+</body>
+
+</html>
