@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brower Event bubbling</title>
+    <script src="../../lib/jquery.js"></script>
+</head>
+
+<body>
+    <div style="width: 200px;height: 100px;background-color: green;">
+        <div><input type="text" name="" id="" disabled></div>
+    </div>
+    <ul>
+        <li>事件传播分三个阶段，1捕获阶段(只触发元素捕获事件)2目标阶段(触发目标捕获以及冒泡事件,按照声明顺序)3冒泡阶段(只触发冒泡事件)</li>
+        <li>浏览器中事件冒泡方向为从内向外，事件捕获为由外向内</li>
+        <li>stopPropagation方法阻止事件向上冒泡</li>
+        <li>jquery绑定的事件在冒泡阶段触发</li>
+    </ul>
+    <script>
+        // $("body").on("mouseup", function (e) {
+        //     //console.log(this) // 测试this指向
+        //     console.log("body maopao mouseup")
+        // });
+        // $("div").on("mouseup", e => {
+        //     //console.log(this) // 测试this指向
+        //     console.log("div maopao mouseup")
+        // });
+        // $("input").on("mouseup", e => {
+        //     //e.stopPropagation()
+        //     //console.log(this) // 测试this指向
+        //     console.log("input maopao mouseup")
+        // });//.on("focus", e => console.log("input onfocus"))
+
+        document.body.addEventListener("mouseup", function (e) {
+            console.log("body maopao  mouseup")
+
+        }, false);
+
+        document.body.children[0].addEventListener("mouseup", function (e) {
+            console.log("div maopao  mouseup")
+
+        }, false)
+        document.body.children[0].children[0].addEventListener("mouseup", function (e) {
+            console.log("input maopao  mouseup")
+
+        }, false)
+
+        document.body.addEventListener("mouseup", function (e) {
+            console.log("body catch  mouseup")
+
+        }, true);
+
+        document.body.children[0].addEventListener("mouseup", function (e) {
+            console.log("div catch  mouseup")
+
+        }, true)
+        document.body.children[0].children[0].addEventListener("mouseup", function (e) {
+            console.log("input catch  mouseup")
+
+        }, true)
+
+    </script>
+</body>
+
+</html>
