@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery API测试</title>
+    <script src="../../../lib/jquery.js"></script>
+</head>
+
+<body>
+
+    <div class="aa bb">
+        <div class="aa bb">
+            iiiii
+            <div>
+                <div id="inner"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let inner = $("#inner");
+        console.log(inner.parents(".aa.bb").first())
+    </script>
+</body>
+
+</html>
