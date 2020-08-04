@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery 绑定事件多个处理函数触发顺序测试</title>
+    <script src="../../../lib/jquery.js"></script>
+</head>
+<body>
+<button id="button">
+    测试按钮
+</button>
+<script>
+    $("#button").on("click", e => {
+        console.log("handler3")
+    });
+    $("#button").on("click", e => {
+        console.log("handler1")
+    });
+    $("#button").on("click", e => {
+        console.log("handler2")
+    });
+    console.log($._data($("#button").get(0),'events').click[0].handler)
+</script>
+<script></script>
+</body>
+</html>
