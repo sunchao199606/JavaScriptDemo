@@ -4,7 +4,9 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "gulp": "^4.0.2",
     "jquery": "^3.5.0",
+    "typescript": "^3.9.7",
     "ws": "^7.1.2"
   },
   "devDependencies": {
