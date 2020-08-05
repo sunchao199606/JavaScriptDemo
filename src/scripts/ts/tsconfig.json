@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es5",
+    "strict": false,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "outFile": "./build",
+    "sourceMap": true,
+    "noImplicitAny": true
+  }
+}
