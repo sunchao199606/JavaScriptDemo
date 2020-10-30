@@ -1,0 +1,63 @@
+define(["exports", "./Button.vue", "./table/Table.vue"], function (_exports, _Button, _Table) {
+  "use strict";
+
+  var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports["default"] = void 0;
+  _Button = _interopRequireDefault(_Button);
+  _Table = _interopRequireDefault(_Table);
+  var __vue_scope_id__ = "data-v-5d4b96e8";
+  var el = "";
+  var __vue_inject_styles__ = [{
+    source: "\n.color[data-v-5d4b96e8] {\n    color: red;\n}\n",
+    map: undefined,
+    media: undefined
+  }];
+
+  (function (id) {
+    var styles = __vue_inject_styles__ || [];
+    if (styles.length === 0) return;
+    var head = document.head || document.getElementsByTagName('head')[0];
+    if (document.querySelector('style[data-vue-ssr-id~="' + id + '"]')) return;
+
+    for (var index = 0; index < styles.length; index++) {
+      var styleCode = styles[index];
+      var style = {
+        element: undefined,
+        parts: []
+      };
+      var code = styleCode.source;
+
+      if (!style.element) {
+        el = style.element = document.createElement('style');
+        el.type = 'text/css';
+        if (styleCode.media) el.setAttribute('media', styleCode.media);
+        head.appendChild(el);
+      }
+
+      if (style.element.styleSheet) {
+        style.parts.push(code);
+        style.element.styleSheet.cssText = style.parts.filter(Boolean).join('\n');
+      } else {
+        var textNode = document.createTextNode(code);
+        var nodes = style.element.childNodes;
+        if (nodes.length) style.element.insertBefore(textNode, nodes[index]);else style.element.appendChild(textNode);
+      }
+    }
+  })(__vue_scope_id__, __vue_inject_styles__);
+
+  var _default = {
+    name: "App",
+    data: function data() {
+      return {
+        message: "Hello"
+      };
+    },
+    _scopeId: __vue_scope_id__,
+    template: "\n<div><h1 class=\"color\">{{message}}</h1></div>\n"
+  };
+  _exports["default"] = _default;
+});
