@@ -34,3 +34,18 @@ console.log("####################################");
 })();
 console.log("####################################");
 
+//3 Object.assign方法
+(function () {
+    let dialogForm = {
+        userName: "",
+        name: "",
+        password: "",
+        roleNames: [],
+        checkedRoleNames: [],
+        telephone: "",
+        email: ""
+    }
+    const target = Object.assign({}, dialogForm, {roleNames: ["aa"]})
+    console.log(target)
+})();
+
