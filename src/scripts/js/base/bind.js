@@ -1,4 +1,4 @@
-// bind函数用来将函数体里面的this指向绑定到某个对象中
+// bind函数用来将函数体里面的this指向绑定到某个对象中 并返回此函数的引用 变长参数可以有多个
 let add = function (a, b) {
     console.log(this)
     return a + b
