@@ -22,7 +22,7 @@
     "gulp-typescript": "^6.0.0-alpha.1",
     "typescript": "^3.9.7",
     "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
